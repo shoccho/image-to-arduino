@@ -1,6 +1,6 @@
 # Description
 
-This script will show an image on the SSD1306 I2C OLED screen.
+This script will show a monochrome bitmap image on the SSD1306 I2C OLED screen.
 You have to wire the arduino and oled screen properly
 make sure to edit the resolution of the picure if you are using
 a bigger oled or just prefer a wider screen.
@@ -9,14 +9,14 @@ you have to compile the arduino code and upload it to the connected arduino
 
 
 # Precautions
-make sure the serial port is correct and also don't use the serial monitor while
+Make sure the serial port is correct and also don't use the serial monitor while
 this script is running and also make sure to increase the screen buffer size
 here my image is 64x32  = 2048bit = 256 byte
 if you want to use a larger image make sure to calculate and increase the size of
 the scrbuffer array as that is where the image would be stored
 
 
-# Prerequisites
+# Prerequisite
 to run these script you need these following modules
     
         pyserial
@@ -35,6 +35,12 @@ you will have to compile and upload the supplid arduino code to your arduino
 
 # Usage
 just use 
-    `python3 main.py "name of your image or a directory of images"`
+
+    python3 main.py "name of your image or a directory of images"
+
 for example
-    `python3 main.py wallpaper.jpg`
+
+    python3 main.py wallpaper.jpg
+or
+    
+    python3 main.py ~/Wallpapers/*
