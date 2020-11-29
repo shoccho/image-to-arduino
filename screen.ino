@@ -1,0 +1,58 @@
+//Complie and upload this code into arduino
+/* connect oled as follows 
+GND - >GND
+VCC -> 5V
+SDA -> A4
+SCL -> A5
+*/
+
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 32
+
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+
+unsigned char scrbffr [256] = {
+//empty buffer
+};
+int i = 0;
+byte read;
+
+void setup() {
+  Serial.begin(115200);
+
+  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    Serial.println(F("SSD1306 allocation failed"));
+
+  }
+
+  display.setTextSize(1); 
+  display.setTextColor(WHITE);  
+
+  display.clearDisplay();
+  while (!Serial) {
+    ; 
+  }
+}
+
+void loop() {
+  
+  if (Serial.read() == 'c') {
+    for (i = 0; i < 256;) {
+      if (Serial.available() > 0) {
+        red = Serial.read();
+        scrbffr[i++] = red;
+      }
+    }
+  }
+  display.clearDisplay();
+  display.drawBitmap(32, 0 , scrbffr, 64, 32, 1);
+  display.display();
+
+
+i=0;
+
+}
