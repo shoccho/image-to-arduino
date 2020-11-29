@@ -7,6 +7,10 @@ a bigger oled or just prefer a wider screen.
 this will show an image of 64x32 res on the center of an 0.91 inch 128x32 oled
 you have to compile the arduino code and upload it to the connected arduino 
 
+**Please note this code is very poorly implemented performance for live video transefer is still out of question ! I am still working on improving the algorithm for generating a bytearray from image that can be displayed.**
+
+<br>
+<br>
 
 # Precautions
 Make sure the serial port is correct and also don't use the serial monitor while
@@ -24,12 +28,19 @@ to run these script you need these following modules
         opencv
         pyautogui
 
-you need to configure the wiring as follows 
-    
-        GND - >GND
-        VCC -> 5V
-        SDA -> A4
-        SCL -> A5
+The required modules can be installed via
+
+    pip install -r requirements.txt
+
+
+you need to connect the I2C oled wires as the following config 
+
+      OLED      Arduino
+     ------------------   
+        GND  ->   GND
+        VCC  ->   5V
+        SDA  ->   A4
+        SCL  ->   A5
 
 you will have to compile and upload the supplid arduino code to your arduino
 
