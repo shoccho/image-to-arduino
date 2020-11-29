@@ -49,7 +49,13 @@ void loop() {
     }
   }
   display.clearDisplay();
-  display.drawBitmap(32, 0 , scrbffr, 64, 32, 1);
+
+  //----------------- x, y, image buffer, height, width , idk what is this :3
+  display.drawBitmap(32, 0 , scrbffr,      64,      32,   1);
+
+   /* here x,y are the starting position of the image (upper left corner)
+      and the lower right corener would be  (x + width,  and y + height)
+      */
   display.display();
 
 

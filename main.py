@@ -8,6 +8,7 @@ import time
 
 def readingimg(img_path):    
     img =  cv2.imread(img_path,0)
+    # configure the image resolution here
     dim=(64,32)
     img=cv2.resize(img,dim)
 
