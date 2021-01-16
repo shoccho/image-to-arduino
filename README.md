@@ -26,7 +26,7 @@ to run these script you need these following modules
         pyserial
         numpy
         opencv
-        pyautogui
+        
 
 The required modules can be installed via
 
