@@ -2,7 +2,6 @@
 import cv2
 import numpy as np
 import sys
-import pyautogui
 import serial
 import time
 
@@ -36,7 +35,7 @@ def main():
     # please make sure the arduino is connected to "/dev/ttyACM0" this port.
     # or replace the value with the port from your pc
 
-    sp = serial.Serial(port="/dev/ttyACM0", baudrate=115200)
+    sp = serial.Serial(port="/dev/ttyUSB0", baudrate=115200)
     if(len(sys.argv) == 1):
         print("No imge was supplied :/ exiting")
         sys.exit()

@@ -10,6 +10,8 @@ SCL -> A5
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
+
+// change these if you have a different screen
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 32
 
@@ -43,8 +45,8 @@ void loop() {
   if (Serial.read() == 'c') {
     for (i = 0; i < 256;) {
       if (Serial.available() > 0) {
-        red = Serial.read();
-        scrbffr[i++] = red;
+        read = Serial.read();
+        scrbffr[i++] = read;
       }
     }
   }
